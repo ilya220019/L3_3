@@ -10,9 +10,14 @@ public class OneViewHolder extends RecyclerView.ViewHolder {
     TextView textView;
     public OneViewHolder(@NonNull View itemView) {
         super(itemView);
-        textView = itemView.findViewById(R.id.tv_all);
+        initView();
+
 
     }
+
+    private void initView() {textView = itemView.findViewById(R.id.tv_all);
+    }
+
     public void bind(String name){
         textView.setText(name);
 

@@ -30,9 +30,10 @@ public class PhoneFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        initView();
         loadData();
         PhoneAdapter adapter = new PhoneAdapter(phone);
-        recyclerView = requireActivity().findViewById(R.id.rv_phone);
         recyclerView.setAdapter(adapter);
         Button button = requireActivity().findViewById(R.id.btn_next_phone);
         button.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +43,11 @@ public class PhoneFragment extends Fragment {
 
             }
         });
+
+    }
+
+    public void initView() {
+        recyclerView = requireActivity().findViewById(R.id.rv_phone);
 
     }
 

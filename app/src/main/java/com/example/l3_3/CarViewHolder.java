@@ -10,8 +10,13 @@ public class CarViewHolder extends RecyclerView.ViewHolder {
     TextView textView;
     public CarViewHolder(@NonNull View itemView) {
         super(itemView);
+        initView();
+    }
+
+    private void initView() {
         textView = itemView.findViewById(R.id.tv_car);
     }
+
     public void bind(String nameCar){
         textView.setText(nameCar);
     }

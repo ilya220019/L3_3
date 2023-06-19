@@ -28,11 +28,15 @@ public class OneFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initView();
         loadData();
+        initListener();
         OneAdapter oneAdapter = new OneAdapter(oneList);
-        recyclerView = requireActivity().findViewById(R.id.rv_one);
-        button = requireActivity().findViewById(R.id.btn_next1);
         recyclerView.setAdapter(oneAdapter);
+
+    }
+
+    public void initListener() {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +45,12 @@ public class OneFragment extends Fragment {
         });
     }
 
-    private void loadData() {
+    public void initView() {
+        recyclerView = requireActivity().findViewById(R.id.rv_one);
+        button = requireActivity().findViewById(R.id.btn_next1);
+    }
+
+    public void loadData() {
         oneList.add("Антон");
         oneList.add("Владимир");
         oneList.add("Николай");
